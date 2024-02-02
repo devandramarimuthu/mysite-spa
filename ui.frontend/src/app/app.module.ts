@@ -23,6 +23,9 @@ import { AppComponent } from './app.component';
 import './components/import-components';
 import { ModelManagerService } from './components/model-manager.service';
 import { PageComponent } from './components/page/page.component';
+import { ImageComponent } from './components/image/image.component';
+import { TextComponent } from './components/text/text.component';
+import { HeaderComponent } from './components/header/header.component';
 
 import {AemAngularCoreWcmComponentsTabsV1} from '@adobe/aem-core-components-angular-spa/containers/tabs/v1';
 
@@ -58,8 +61,8 @@ import {AemAngularCoreWcmComponentsLanguageNavigationV1} from '@adobe/aem-core-c
   ],
   providers: [ ModelManagerService,
     { provide: APP_BASE_HREF, useValue: '/' } ],
-  declarations: [AppComponent, PageComponent],
-  entryComponents: [PageComponent, ImageComponent],
+  declarations: [AppComponent, PageComponent, ImageComponent, TextComponent, HeaderComponent],
+  entryComponents: [PageComponent, ImageComponent, TextComponent, HeaderComponent],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

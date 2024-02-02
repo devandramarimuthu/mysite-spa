@@ -16,6 +16,13 @@
 
 import { Component, Input, HostBinding } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import {MapTo} from '@adobe/aem-angular-editable-components';
+
+const TextEditConfig = {
+    emptyLabel: 'Text',
+    isEmpty: cqModel =>
+        !cqModel || !cqModel.text || cqModel.text.trim().length < 1
+};
 
 
 @Component({
@@ -23,6 +30,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./text.component.css'],
   templateUrl: './text.component.html'
 })
+
 export class TextComponent {
   @Input() richText: boolean;
   @Input() text: string;
@@ -37,3 +45,5 @@ export class TextComponent {
 
   constructor(private sanitizer: DomSanitizer) {}
 }
+
+MapTo('mysite/components/text')(TextComponent, TextEditConfig );
